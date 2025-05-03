@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ponte da Solidariedade - Cadastro Doadores</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+  <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+
+<body>
+  <header>
+    <!-- Barra de navegação -- Início -------->
+    <nav class="navbar bg-light navbar-light navbar-expand-sm py-2 sticky-top">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="./index.html">
+          <img class="img-fluid float-left" style="max-width: 250px" src="./assets/img/logo-ps/logo-ps-original.png"
+            alt="Logo Ponte da Solidariedade" /></a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <div class="navbar-nav mx-auto">
+            <a class="nav-link" href="./index.html">Página Inicial
+            </a>
+            <a class="nav-link" href="./index.html#about">Missão</a>
+            <a class="nav-link" href="./index.html#testimonials">Depoimentos
+            </a>
+            <a class="nav-link" href="./index.html#receivers">Receptores
+            </a>
+            <a class="nav-link" href="Frm_Grif.html"></a>
+            <div class="dropdown">
+              <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#">Cadastros</a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="nav-link" href="./Frm_Receptores.html">Receptores</a>
+                </li>
+                <li>
+                  <a class="nav-link" href="./Frm_Alimento.html">Cadastro de Alimentos</a>
+                </li>
+              </ul>
+            </div>
+            <a class="nav-link active" href="./Frm_Doadores.html">Doação Direta</a>
+            <a class="nav-link" href="./index.html#contact">Contato</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <!-- Barra de navegação -- Final -------->
+
+  <!-- Seção de cadastro de doadores -->
+  <section id="donor-form" class="py-5">
+    <div class="container">
+      <h2>Cadastro de Doadores</h2>
+      <!-- Dropdown para seleção de doadores -->
+      <div class="form-group">
+        <label for="select-receiver">Selecione um receptor:</label>
+        <select class="form-control" id="select-receiver">
+          <option value="">Selecione receptor</option>
+          <!-- JavaScript irá preencher as opções -->
+        </select>
+      </div>
+      <p></p>
+      <div class="form-group">
+        <label for="select-food">Selecione alimento:</label>
+        <select class="form-control" id="select-food">
+          <option value="">Selecione um alimento</option>
+          <!-- JavaScript irá preencher as opções -->
+        </select>
+      </div>
+      <hr />
+      <!-- Formulário de cadastro de doadores -->
+      <form id="donor-form" action="/adicionar-doacao" method="POST">
+        <div class="form-group">
+          <label for="donor-name">Nome do Doador:</label>
+          <input type="text" class="form-control" id="donor-name" name="donor-name" required />
+        </div>
+        <div class="form-group">
+          <label for="donor-address">Endereço:</label>
+          <input type="text" class="form-control" id="donor-address" name="donor-address" required />
+        </div>
+        <div class="form-group">
+          <label for="donor-phone">Telefone:</label>
+          <input type="text" class="form-control" id="donor-phone" name="donor-phone" required />
+        </div>
+        <div class="form-group">
+          <label for="donor-email">E-mail:</label>
+          <input type="email" class="form-control" id="donor-email" name="donor-email" required />
+        </div>
+        <div class="form-group">
+          <label for="donor-field">Campo de Atuação:</label>
+          <input type="text" class="form-control" id="donor-field" name="donor-field" required />
+        </div>
+        <div class="form-group">
+          <label for="donor-ir-declaration">Necessita de declaração para o IR?</label>
+          <select class="form-control" id="donor-ir-declaration" name="donor-ir-declaration" required>
+            <option value="">Selecione uma opção</option>
+            <option value="sim">Sim</option>
+            <option value="nao">Não</option>
+          </select>
+        </div>
+        <div class="form-group form-check">
+          <input type="checkbox" class="form-check-input" id="donor-terms" required />
+          <label class="form-check-label" for="donor-terms">Aceito o termo de responsabilidade do doador</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Doar</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Rodapé ---- Início -------------->
+  <footer class="bg-marrom text-white text-center">
+    <section class="container">
+      <div class="row py-3">
+        <div class="col-sm-4">
+          <h3>Projeto</h3>
+          <img class="img-fluid" src="./assets/img/logo-reprogramese/preferencial-horizontal-branca.png"
+            alt="Logo Reprograme-se" />
+        </div>
+        <div class="col-sm-4">
+          <h3>Realização</h3>
+          <img class="img-fluid" src="./assets/img/logo-ifes/ifes-horizontal-branco.png" alt="Logo IFES" />
+          <img class="img-fluid" src="./assets/img/logo-action/horizontal-negativa.png" alt="Logo Action" />
+        </div>
+        <div class="col-sm-4">
+          <h4>Equipe Realizadora</h4>
+          &nbsp;
+          <p><a class="text-white" href="https://www.instagram.com/doug.fdev/" target="_blank"><i
+                class="fab fa-instagram text-white"></i>&nbsp;Douglas da Silva</a></p>
+          <p><a class="text-white" href="https://www.instagram.com/lucasbona/" target="_blank"><i
+                class="fab fa-instagram text-white"></i>&nbsp;Lucas Bona</a></p>
+        </div>
+      </div>
+    </section>
+    <p>&copy; 2024 Ponte da Solidariedade. Todos os direitos reservados.</p>
+  </footer>
+
+  <!-- JavaScript para salvar dados do formulário no localStorage -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const form = document.getElementById("donor-form");
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        // Coletando os dados do formulário
+        const name = document.getElementById("donor-name").value;
+        const address = document.getElementById("donor-address").value;
+        const phone = document.getElementById("donor-phone").value;
+        const email = document.getElementById("donor-email").value;
+        const field = document.getElementById("donor-field").value;
+        const irDeclaration = document.getElementById("donor-ir-declaration").value;
+        const termsAccepted = document.getElementById("donor-terms").checked;
+
+        // Outros dados selecionados
+        const receiver = document.getElementById("select-receiver").value;
+        const food = document.getElementById("select-food").value;
+
+        // Criando um objeto com os dados da doação
+        const newDonation = {
+          id: Date.now(), // Identificador único baseado no timestamp
+          name: name,
+          address: address,
+          phone: phone,
+          email: email,
+          field: field,
+          irDeclaration: irDeclaration,
+          termsAccepted: termsAccepted,
+          receiver: receiver,
+          food: food
+        };
+
+        // Recuperando as doações salvas ou inicializando uma lista vazia
+        let donations = JSON.parse(localStorage.getItem("donations")) || [];
+
+        // Adicionando a nova doação à lista
+        donations.push(newDonation);
+
+        // Salvando a lista de doações atualizada no localStorage
+        localStorage.setItem("donations", JSON.stringify(donations));
+
+        // Limpar o formulário após a submissão
+        form.reset();
+
+        // Exibir mensagem de sucesso
+        alert("Doação cadastrada com sucesso!");
+      });
+    });
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Função para preencher o dropdown com os receptores cadastrados
+      function populateReceiverDropdown() {
+        const selectReceiver = document.getElementById("select-receiver");
+        selectReceiver.innerHTML = '<option value="">Selecione um receptor</option>'; // Limpar as opções
+
+        // Recuperando a lista de receptores do localStorage
+        const receivers = JSON.parse(localStorage.getItem("receivers")) || [];
+
+        // Iterando sobre a lista de receptores para adicionar as opções ao dropdown
+        receivers.forEach(function (receiver) {
+          const option = document.createElement("option");
+          option.textContent = receiver.name;
+          option.value = receiver.id; // Usar o ID do receptor como valor
+          selectReceiver.appendChild(option);
+        });
+      }
+
+      // Função para preencher o dropdown com os alimentos cadastrados
+      function populateFoodDropdown() {
+        const selectFood = document.getElementById("select-food");
+        selectFood.innerHTML = '<option value="">Selecione um alimento</option>'; // Limpar as opções
+
+        // Recuperando a lista de alimentos do localStorage
+        const foods = JSON.parse(localStorage.getItem("foods")) || [];
+
+        // Iterando sobre a lista de alimentos para adicionar as opções ao dropdown
+        foods.forEach(function (food) {
+          const option = document.createElement("option");
+          option.textContent = food.descricao;
+          option.value = food.id; // Usar o ID do alimento como valor
+          selectFood.appendChild(option);
+        });
+      }
+
+      // Chamando as funções para preencher os dropdowns quando a página carregar
+      populateReceiverDropdown();
+      populateFoodDropdown();
+    });
+
+    // Preencher dropdown de receptores
+    function populateReceiversDropdown() {
+      const selectReceiver = document.getElementById("select-receiver");
+      const receivers = JSON.parse(localStorage.getItem("receivers")) || [];
+
+      receivers.forEach(function (receiver) {
+        const option = document.createElement("option");
+        option.textContent = receiver.identification;
+        option.value = receiver.id;
+        selectReceiver.appendChild(option);
+      });
+    }
+
+    // Preencher dropdown de alimentos
+    function populateFoodDropdown() {
+      const selectFood = document.getElementById("select-food");
+      const foods = JSON.parse(localStorage.getItem("alimentos")) || [];
+
+      foods.forEach(function (food) {
+        const option = document.createElement("option");
+        option.textContent = food.descricao;
+        option.value = food.id;
+        selectFood.appendChild(option);
+      });
+    }
+
+    // Chamar as funções para preencher os dropdowns quando a página carregar
+    document.addEventListener("DOMContentLoaded", function () {
+      populateReceiversDropdown();
+      populateFoodDropdown();
+    });
+
+  </script>
+  <!-- Script do Bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+  <!-- Script para importar icones -->
+  <script src="https://kit.fontawesome.com/70019da677.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

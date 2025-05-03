@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ponte da Solidariedade - Cadastro de Receptores</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+  <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+
+<body>
+  <header>
+    <!-- Barra de navegação -- Início -------->
+    <nav class="navbar bg-light navbar-light navbar-expand-sm py-2 sticky-top">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="./index.html">
+          <img class="img-fluid float-left" style="max-width: 250px" src="./assets/img/logo-ps/logo-ps-original.png"
+            alt="Logo Ponte da Solidariedade" /></a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <div class="navbar-nav mx-auto">
+            <a class="nav-link" href="./index.html">Página Inicial
+            </a>
+            <a class="nav-link" href="./index.html#about">Missão</a>
+            <a class="nav-link" href="./index.html#testimonials">Depoimentos
+            </a>
+            <a class="nav-link" href="./index.html#receivers">Receptores
+            </a>
+            <a class="nav-link" href="Frm_Grif.html"></a>
+            <div class="dropdown">
+              <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#">Cadastros</a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="nav-link active" href="./Frm_Receptores.html">Receptores</a>
+                </li>
+                <li>
+                  <a class="nav-link" href="./Frm_Alimento.html">Cadastro de Alimentos</a>
+                </li>
+              </ul>
+            </div>
+            <a class="nav-link" href="./Frm_Doadores.html">Doação Direta</a>
+            <a class="nav-link" href="./index.html#contact">Contato</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <!-- Barra de navegação -- Final -------->
+
+
+
+  <!-- Seção de formulário de cadastro de receptores de alimentos -->
+  <section id="receiver-form" class="py-5">
+    <div class="container">
+      <h2>Cadastro de Receptores de Alimentos</h2>
+      <form id="form-receptor">
+        <div class="form-group">
+          <label for="identification">Identificação da Entidade:</label>
+          <input type="text" class="form-control" id="identification" name="identification" required />
+        </div>
+        <div class="form-group">
+          <label for="address">Endereço:</label>
+          <input type="text" class="form-control" id="address" name="address" required />
+        </div>
+        <div class="form-group">
+          <label for="phone">Telefone:</label>
+          <input type="text" class="form-control" id="phone" name="phone" required />
+        </div>
+        <div class="form-group">
+          <label for="email">E-mail:</label>
+          <input type="email" class="form-control" id="email" name="email" required />
+        </div>
+        <div class="form-group">
+          <label for="image">URL da Imagem:</label>
+          <input type="url" class="form-control" id="image" name="image" required />
+        </div>
+        <div class="form-group">
+          <label for="beneficiaries">Quantidade de Beneficiários:</label>
+          <input type="number" class="form-control" id="beneficiaries" name="beneficiaries" required />
+        </div>
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input" id="acceptance" name="acceptance" required />
+          <label class="form-check-label" for="acceptance">Aceito o termo de responsabilidade do receptor</label>
+        </div>
+        <button type="submit" class="btn btn-primary mt-3">Enviar</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Lista de receptores -->
+  <section id="receivers" class="py-5">
+    <div class="container">
+      <h2>Lista de Receptores de Alimentos</h2>
+      <div class="row row-cols-1 row-cols-md-3 g-4" id="receiver-list-container">
+        <!-- Os receptores serão inseridos aqui dinamicamente -->
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Rodapé ---- Início -------------->
+  <footer class="bg-marrom text-white text-center">
+    <section class="container">
+      <div class="row py-3">
+        <div class="col-sm-4">
+          <h3>Projeto</h3>
+          <img class="img-fluid" src="./assets/img/logo-reprogramese/preferencial-horizontal-branca.png"
+            alt="Logo Reprograme-se" />
+        </div>
+        <div class="col-sm-4">
+          <h3>Realização</h3>
+          <img class="img-fluid" src="./assets/img/logo-ifes/ifes-horizontal-branco.png" alt="Logo IFES" />
+          <img class="img-fluid" src="./assets/img/logo-action/horizontal-negativa.png" alt="Logo Action" />
+        </div>
+        <div class="col-sm-4">
+          <h4>Equipe Realizadora</h4>
+          &nbsp;
+          <p>
+            <a class="text-white" href="https://www.instagram.com/doug.fdev/" target="_blank"><i
+                class="fab fa-instagram text-white"></i>&nbsp;Douglas da
+              Silva</a>
+          </p>
+          <p>
+            <a class="text-white" href="https://www.instagram.com/lucasbona/" target="_blank"><i
+                class="fab fa-instagram text-white"></i>&nbsp;Lucas Bona</a>
+          </p>
+        </div>
+      </div>
+    </section>
+    <p>&copy; 2024 Ponte da Solidariedade. Todos os direitos reservados.</p>
+  </footer>
+
+  <!-- JavaScript para salvar dados do formulário no localStorage -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const form = document.getElementById("form-receptor");
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const identification = document.getElementById("identification").value;
+        const address = document.getElementById("address").value;
+        const phone = document.getElementById("phone").value;
+        const email = document.getElementById("email").value;
+        const image = document.getElementById("image").value;
+        const beneficiaries = document.getElementById("beneficiaries").value;
+        const acceptance = document.getElementById("acceptance").checked;
+
+        const newReceiver = {
+          identification: identification,
+          address: address,
+          phone: phone,
+          email: email,
+          image: image,
+          beneficiaries: beneficiaries,
+          acceptance: acceptance,
+        };
+
+        let receivers = JSON.parse(localStorage.getItem("receivers")) || [];
+        receivers.push(newReceiver);
+        localStorage.setItem("receivers", JSON.stringify(receivers));
+
+        // Limpa o formulário após a submissão
+        form.reset();
+
+        // Renderiza novamente a lista de receptores para exibir o novo receptor adicionado
+        renderReceiverList();
+
+        alert("Cadastro concluído com sucesso!");
+      });
+    });
+
+    // Função para renderizar a lista de receptores
+    function renderReceiverList() {
+      // Obtém a lista de receptores do localStorage
+      const receivers = JSON.parse(localStorage.getItem("receivers")) || [];
+
+      // Seleciona o contêiner da lista de receptores
+      const receiverListContainer = document.getElementById(
+        "receiver-list-container"
+      );
+
+      // Limpa qualquer conteúdo existente no contêiner
+      receiverListContainer.innerHTML = "";
+
+      // Para cada receptor, cria um card e adiciona ao contêiner
+      receivers.forEach((receiver) => {
+        // Cria um card para o receptor
+        const receiverCard = `
+          <div class="col mb-4">
+            <div class="card h-100">
+              <img src="${receiver.image}" class="card-img-top mx-auto d-block" alt="${receiver.name}" style="max-width: 200px;">
+              <div class="card-body text-center">
+                <h5 class="card-title">${receiver.identification}</h5>
+                <p class="card-text"><strong>Endereço:</strong> ${receiver.address}</p>
+                <p class="card-text"><strong>E-mail:</strong> ${receiver.email}</p>
+                <p class="card-text"><strong>Telefone:</strong> ${receiver.phone}</p>
+              </div>
+            </div>
+          </div>
+        `;
+
+        // Adiciona o card ao contêiner
+        receiverListContainer.insertAdjacentHTML("beforeend", receiverCard);
+      });
+    }
+
+    // Chama a função para renderizar a lista de receptores ao carregar a página
+    document.addEventListener("DOMContentLoaded", function () {
+      renderReceiverList();
+    });
+    const initialReceivers = [
+      {
+        identification: "Lar da Caridade",
+        address: "Rua das Flores, 100",
+        phone: "(27) 98765-4321",
+        email: "exemplo1@email.com",
+        image: "https://thumbs.dreamstime.com/b/logotipo-de-caridade-com-modelo-desenho-manual-%C3%ADcone-colorido-217508286.jpg",
+        beneficiaries: "2",
+        acceptance: true,
+      },
+      {
+        identification: "Fé e Glória",
+        address: "Rua das Amizades, 222",
+        phone: "(27) 98765-4321",
+        email: "exemplo1@email.com",
+        image: "https://png.pngtree.com/templates_detail/20180813/charity-logo-design-template-png_28560.jpg",
+        beneficiaries: "12",
+        acceptance: true,
+      },
+      {
+        identification: "Joana da Silva",
+        address: "Avenida Brasil, 200",
+        phone: "(27) 12345-6789",
+        email: "exemplo2@email.com",
+        image: "https://static.rfstat.com/logo-presets/4772/thumbnail_2bf0883c822d_1x.webp",
+        beneficiaries: "3",
+        acceptance: true,
+      },
+      // Adicione mais receptores conforme desejado
+    ];
+    localStorage.setItem("receivers", JSON.stringify(initialReceivers));
+    renderReceiverList();
+  </script>
+  <!-- Script do Bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+  <!-- Script para importar icones -->
+  <script src="https://kit.fontawesome.com/70019da677.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

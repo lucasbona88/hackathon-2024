@@ -1,0 +1,83 @@
+:root {
+  --marrom-primario: #724b3a;
+  --marrom-claro: #e9a758;
+  --marrom-escuro: #4d3d2b;
+}
+
+body {
+  font-family: "Arimo", sans-serif;
+  color: #423d32;
+}
+
+.container-gradient {
+  background: linear-gradient(
+    to bottom,
+    rgb(212, 175, 55) 0%,
+    rgb(192, 154, 45) 25%,
+    rgb(172, 133, 35) 50%,
+    rgb(152, 112, 25) 75%,
+    rgb(132, 91, 15) 100%
+  );
+  color: white;
+}
+
+label {
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+textarea {
+  height: 100px;
+}
+
+.btn-primary {
+  background-color: var(--marrom-primario);
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: var(--marrom-escuro);
+}
+
+.bg-marrom {
+  background-color: var(--marrom-escuro);
+}
+
+/* Estilos para links */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  margin-bottom: 10px;
+}
+
+ul li a {
+  text-decoration: none;
+  color: var(--marrom-primario);
+}
+
+a {
+  color: var(--marrom-primario);
+}
+a:hover {
+  color: var(--marrom-claro);
+}
+
+ul li a:hover {
+  text-decoration: underline;
+  color: var(--marrom-claro);
+}

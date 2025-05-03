@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ponte da Solidariedade - Cadastro de Alimentos</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+  <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+
+<body>
+  <header>
+    <!-- Barra de navegação -- Início -------->
+    <nav class="navbar bg-light navbar-light navbar-expand-sm py-2 sticky-top">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="./index.html">
+          <img class="img-fluid float-left" style="max-width: 250px" src="./assets/img/logo-ps/logo-ps-original.png"
+            alt="Logo Ponte da Solidariedade" /></a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <div class="navbar-nav mx-auto">
+            <a class="nav-link" href="./index.html">Página Inicial
+            </a>
+            <a class="nav-link" href="./index.html#about">Missão</a>
+            <a class="nav-link" href="./index.html#testimonials">Depoimentos
+            </a>
+            <a class="nav-link" href="./index.html#receivers">Receptores
+            </a>
+
+            <div class="dropdown">
+              <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#">Cadastros</a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="nav-link" href="./Frm_Receptores.html">Receptores</a>
+                </li>
+                <li>
+                  <a class="nav-link active" href="./Frm_Alimento.html">Cadastro de Alimentos</a>
+                </li>
+              </ul>
+            </div>
+            <a class="nav-link" href="./Frm_Doadores.html">Doação Direta</a>
+            <a class="nav-link" href="./index.html#contact">Contato</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <!-- Barra de navegação -- Final -------->
+
+  <!-- Seção de produtos cadastrados -->
+  <section id="product-grid" class="py-5">
+    <div class="container">
+      <h2>Produtos Cadastrados</h2>
+      <div class="row row-cols-1 row-cols-md-4 g-4" id="product-card-container">
+        <!-- Os cards dos produtos serão inseridos aqui dinamicamente -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção de formulário de cadastro de alimentos -->
+  <section id="contact-form" class="py-5">
+    <div class="container">
+      <h2>Cadastro de Alimentos</h2>
+      <form id="form-alimento" class="form p-5" onsubmit="return cadastrarAlimento()">
+        <div class="form-group">
+          <label for="descricao">Descrição do Produto:</label>
+          <input type="text" class="form-control" id="descricao" name="descricao" required />
+        </div>
+        <div class="form-group">
+          <label for="peso">Peso:</label>
+          <input type="text" class="form-control" id="peso" name="peso" required />
+        </div>
+        <div class="form-group">
+          <label for="validade">Validade:</label>
+          <input type="date" class="form-control" id="validade" name="validade" required />
+        </div>
+        <div class="form-group">
+          <label for="imagem">URL da Imagem:</label>
+          <input type="text" class="form-control" id="imagem" name="imagem" required />
+        </div>
+        <button type="submit" class="btn btn-primary m-3">
+          Cadastrar
+        </button>
+      </form>
+    </div>
+  </section>
+  <div id="mensagem-sucesso" class="alert alert-success d-none" role="alert">
+    Produto cadastrado com sucesso!
+  </div>
+
+  <!-- Rodapé ---- Início -------------->
+  <footer class="bg-marrom text-white text-center">
+    <section class="container">
+      <div class="row py-3">
+        <div class="col-sm-4">
+          <h3>Projeto</h3>
+          <img class="img-fluid" src="./assets/img/logo-reprogramese/preferencial-horizontal-branca.png"
+            alt="Logo Reprograme-se" />
+        </div>
+        <div class="col-sm-4">
+          <h3>Realização</h3>
+          <img class="img-fluid" src="./assets/img/logo-ifes/ifes-horizontal-branco.png" alt="Logo IFES" />
+          <img class="img-fluid" src="./assets/img/logo-action/horizontal-negativa.png" alt="Logo Action" />
+        </div>
+        <div class="col-sm-4">
+          <h4>Equipe Realizadora</h4>
+          &nbsp;
+          <p>
+            <a class="text-white" href="https://www.instagram.com/doug.fdev/" target="_blank"><i
+                class="fab fa-instagram text-white"></i>&nbsp;Douglas da
+              Silva</a>
+          </p>
+          <p>
+            <a class="text-white" href="https://www.instagram.com/lucasbona/" target="_blank"><i
+                class="fab fa-instagram text-white"></i>&nbsp;Lucas Bona</a>
+          </p>
+        </div>
+      </div>
+    </section>
+    <p>&copy; 2024 Ponte da Solidariedade. Todos os direitos reservados.</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // Função para criar um card de produto
+    function criarCardProduto(produto) {
+      const card = document.createElement("div");
+      card.classList.add("col");
+
+      card.innerHTML = `
+        <div class="card h-100">
+          <img src="${produto.imagem}" class="card-img-top" alt="${produto.descricao}">
+          <div class="card-body">
+            <h5 class="card-title">${produto.descricao}</h5>
+            <p class="card-text">Validade: ${produto.validade}</p>
+            <p class="card-text">Peso: ${produto.peso}</p>
+          </div>
+        </div>
+      `;
+
+      return card;
+    }
+
+    // Função para popular a grade de produtos
+    function popularGradeProdutos() {
+      const container = document.getElementById("product-card-container");
+      const alimentos = JSON.parse(localStorage.getItem("alimentos")) || [];
+
+      container.innerHTML = ""; // Limpar o conteúdo atual
+
+      alimentos.forEach(alimento => {
+        const card = criarCardProduto(alimento);
+        container.appendChild(card);
+      });
+    }
+
+    // Executar a função ao carregar a página
+    window.onload = popularGradeProdutos;
+
+    // Função para cadastrar um novo alimento
+    function cadastrarAlimento() {
+      const descricao = document.getElementById("descricao").value;
+      const peso = document.getElementById("peso").value;
+      const validade = document.getElementById("validade").value;
+      const imagem = document.getElementById("imagem").value;
+
+      // Verificar se algum campo está vazio
+      if (!descricao || !peso || !validade || !imagem) {
+        alert("Por favor, preencha todos os campos.");
+        return false; // Impede o envio do formulário
+      }
+
+      const novoAlimento = {
+        descricao: descricao,
+        peso: peso,
+        validade: validade,
+        imagem: imagem
+      };
+
+      // Recuperando a lista de alimentos cadastrados do localStorage
+      let alimentos = JSON.parse(localStorage.getItem("alimentos")) || [];
+
+      // Adicionando o novo alimento à lista
+      alimentos.push(novoAlimento);
+
+      // Salvando a lista atualizada de alimentos no localStorage
+      localStorage.setItem("alimentos", JSON.stringify(alimentos));
+
+      // Popular a grade de produtos novamente
+      popularGradeProdutos();
+
+      // Resetar os valores dos campos do formulário
+      document.getElementById("descricao").value = "";
+      document.getElementById("peso").value = "";
+      document.getElementById("validade").value = "";
+      document.getElementById("imagem").value = "";
+
+      // Exibir mensagem de sucesso
+      const mensagemSucesso = document.getElementById("mensagem-sucesso");
+      mensagemSucesso.classList.remove("d-none");
+
+      // Remover mensagem após alguns segundos
+      setTimeout(function () {
+        mensagemSucesso.classList.add("d-none");
+      }, 3000); // Tempo em milissegundos (3 segundos)
+
+      return false; // Impede o envio do formulário
+    }
+  </script>
+  <!-- Script do Bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+  <!-- Script para importar icones -->
+  <script src="https://kit.fontawesome.com/70019da677.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
