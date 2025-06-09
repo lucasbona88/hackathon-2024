@@ -1,9 +1,8 @@
 ![HTML](https://img.shields.io/badge/html-5-orange)
 ![JavaScript](https://img.shields.io/badge/JavaScript-vanilla-yellow)
+![Hackathon](https://img.shields.io/badge/🥇_1º%20Lugar-Hackathon%20Ifes-blue)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 ![Bootstrap](https://img.shields.io/badge/-boostrap-0D1117?style=for-the-badge&logo=bootstrap&labelColor=0D1117)
-![Hackathon](https://img.shields.io/badge/🥇_1º%20Lugar-Hackathon%20Ifes-blue)
-
 
 # 🍽️ Plataforma de Doação de Alimentos
 
@@ -16,6 +15,7 @@ Este projeto foi desenvolvido durante o Hackathon promovido pelo Instituto Feder
 
 A **Plataforma de Doação de Alimentos** é uma aplicação web que conecta doadores, alimentos disponíveis e instituições receptoras, com o objetivo de reduzir o desperdício e promover a solidariedade por meio da tecnologia.  
 O sistema foi desenvolvido com foco em **design acessível**, **experiência do usuário**, **responsividade** e **uso de tecnologias web puras**.
+Como a maioria dos Hackathon, neste tivemos tempo extremamente reduzido para criar a ideia, desenvolver o layout e postar o projeto, projeto desenvolvido em dupla com Douglas durante apenas um sábado e um domingo.
 
 ---
 
@@ -67,3 +67,8 @@ O projeto está dividido em múltiplas páginas HTML, cada uma com foco específ
 ## 🥇 Premiação
 
 Este projeto foi premiado com o **1º lugar no Hackathon Ifes 2024**, destacando-se entre diversas equipes pelo alinhamento com os requisitos técnicos e proposta social impactante.
+
+--- 
+## 🔗 Acesse a demo online:
+
+['GitHub Pages'](https://lucasbona88.github.io/hackathon-2024/)
